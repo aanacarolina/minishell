@@ -1,7 +1,9 @@
 # minishell
-minishell da vitoria
+## minishell da vitoria
 
-TODO: incluir libft da Gabi
-TODO: carol ler acelera
-TODO: proteger main 
-TODO: rule: norminette
+<ol>
+  <li>TODO: incluir libft da Gabi </li>
+  <li>TODO: carol ler acelera</li>
+  <li>TODO: proteger main</li>
+  <li>TODO: rule: norminette</li>
+</ol>
