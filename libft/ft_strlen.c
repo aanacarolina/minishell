@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 17:36:31 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/12 20:24:27 by gacalaza         ###   ########.fr       */
+/*   Created: 2022/09/12 19:44:55 by gacalaza          #+#    #+#             */
+/*   Updated: 2023/02/23 17:07:16 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/minishell.h"
+#include"libft.h"
 
-int	main(int argc, char *argv[], char* envp[])
+size_t	ft_strlen(const char *str)
 {
-	
+	int	count;
+
+	count = 0;
+	if (!str)
+		return (0);
+	while (str[count] != '\0')
+	{
+		count++;
+	}
+	return (count);
 }
