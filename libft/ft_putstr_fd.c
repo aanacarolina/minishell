@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacalaza <gacalaza@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 17:36:31 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/12 20:24:27 by gacalaza         ###   ########.fr       */
+/*   Created: 2022/09/12 19:44:27 by gacalaza          #+#    #+#             */
+/*   Updated: 2022/09/12 19:44:28 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/minishell.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[], char* envp[])
+void	ft_putstr_fd(char *s, int fd)
 {
-	
+	int	count;
+
+	count = 0;
+	while (s[count] != '\0')
+	{
+		write(fd, &s[count], 1);
+		count++;
+	}
 }

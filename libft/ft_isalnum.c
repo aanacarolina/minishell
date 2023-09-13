@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 17:36:31 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/12 20:24:27 by gacalaza         ###   ########.fr       */
+/*   Created: 2022/09/12 19:42:24 by gacalaza          #+#    #+#             */
+/*   Updated: 2023/02/23 17:21:19 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/minishell.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[], char* envp[])
+int	ft_isalnum(int argument)
 {
-	
+	if ((argument >= 'a' && argument <= 'z') || (argument >= 'A'
+			&& argument <= 'Z') || (argument >= '0' && argument <= '9'))
+		return (1);
+	else
+		return (0);
 }

@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacalaza <gacalaza@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 17:36:31 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/12 20:24:27 by gacalaza         ###   ########.fr       */
+/*   Created: 2022/09/12 19:43:08 by gacalaza          #+#    #+#             */
+/*   Updated: 2022/10/14 18:44:06 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/minishell.h"
-
-int	main(int argc, char *argv[], char* envp[])
+int	ft_isprint(int argument)
 {
-	
+	if (argument > 31 && argument < 127)
+		return (1);
+	else
+		return (0);
 }

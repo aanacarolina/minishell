@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacalaza <gacalaza@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 17:36:31 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/12 20:24:27 by gacalaza         ###   ########.fr       */
+/*   Created: 2022/09/12 19:42:57 by gacalaza          #+#    #+#             */
+/*   Updated: 2022/09/12 19:43:01 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/minishell.h"
-
-int	main(int argc, char *argv[], char* envp[])
+int	ft_isdigit(int argument)
 {
-	
+	if (argument >= '0' && argument <= '9')
+		return (1);
+	else
+		return (0);
 }

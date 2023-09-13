@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacalaza <gacalaza@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 17:36:31 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/12 20:24:27 by gacalaza         ###   ########.fr       */
+/*   Created: 2022/10/07 23:55:11 by gacalaza          #+#    #+#             */
+/*   Updated: 2022/10/08 20:13:08 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/minishell.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[], char* envp[])
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	
+	t_list	*temp;
+
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		del((*lst)->content);
+		free (*lst);
+		*lst = temp;
+	}
+	*lst = NULL;
 }
