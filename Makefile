@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+         #
+#    By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 20:24:48 by gacalaza          #+#    #+#              #
-#    Updated: 2023/09/12 20:31:17 by gacalaza         ###   ########.fr        #
+#    Updated: 2023/09/13 23:09:51 by anacaro3         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,11 @@ NAME =	minishell
 
 # ======= Sources and objs ========
 SRCS = minishell.c 
-SRCS +=
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS_MAN:.c=.o)
 
 # ====== Folders and Paths ========
-LIBFT_DIR	= ./libs/libft/
+LIBFT_DIR	= ./libft/
 INCL_DIR	= ./includes/
 MANDATORY	= ./src/
 LIBFT		= $(addprefix $(LIBFT_DIR), libft.a)
@@ -45,6 +44,8 @@ $(OBJS): $(HEADERM)
 $(NAME): $(OBJS)
 	cc $(FLAGS) $^ $(LIBFT) -o $@
 
+comp_libft:
+	@make -C $(LIBFT_DIR) --no-print-directory
 
 re: fclean all
 
@@ -56,3 +57,6 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@make -C $(LIBFT_DIR) fclean
+
+	
