@@ -6,13 +6,14 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:27 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/13 21:48:01 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:01:14 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
+# include "./libft/libft.h"
 # include <errno.h>
 # include <fcntl.h>
 # include <readline/history.h>
