@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:31 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/13 22:04:40 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/13 23:08:31 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int	main(int argc, char *argv[], char *envp[])
 {
+	(void)envp;
+	(void)argv;
 	if (argc == 1)
 	{
 		while (1)
-		{
-			readline();
-		}
+		printf("readline($< )");// TODO: WHY!!!!?
 	}
+	return (0);
 }
