@@ -6,7 +6,7 @@
 #    By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 20:24:48 by gacalaza          #+#    #+#              #
-#    Updated: 2023/09/13 23:09:51 by anacaro3         ###   ########.fr        #
+#    Updated: 2023/09/15 20:35:04 by anacaro3         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,15 @@ SRCS_MAN	= $(addprefix $(MANDATORY), $(SRCS))
 
 # ====== Flags ========
 
-FLAGS = -Wall -Wextra -Werror -O3
+FLAGS = -Wall -Wextra -Werror -g3
+LIBS = -lreadline
+VALGRIND		=	valgrind \
+					--leak-check=full \
+					--show-leak-kinds=all \
+					--quiet \
+					--suppressions=readline.supp \
+					--keep-debuginfo=yes \
+					--trace-children=yes
 
 # =================== Rules ==========================
 
@@ -42,17 +50,23 @@ all: comp_libft $(NAME)
 $(OBJS): $(HEADERM)
 
 $(NAME): $(OBJS)
-	cc $(FLAGS) $^ $(LIBFT) -o $@
+	cc $(FLAGS) $^ $(LIBFT) $(LIBS) -o $@
 
 comp_libft:
 	@make -C $(LIBFT_DIR) --no-print-directory
+
+run:	all
+		./$(NAME)
+
+valgrind:	all
+			$(VALGRIND) ./$(NAME)
 
 re: fclean all
 
 rebonus: fclean bonus
 
 clean:
-	@rm -rf $(BOBJS) $(OBJS)
+	@rm -rf $(OBJS)
 	@make -C $(LIBFT_DIR) clean
 
 fclean: clean
