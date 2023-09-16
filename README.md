@@ -1,40 +1,36 @@
 # minishell
 ## minishell da vitoria
 
-<ol>
-  <li>TODO: carol ler acelera</li>
-  <li>TODO: problema com readline</li>
-  <li>TODO: parsear stringone</li>
-  <li>TODO: rule: norminette</li>
-  <li>TODO: remover readline.supp antes de entregar</li>
-  <li> TODO: valgrind add_history
+- [x] Display a prompt when waiting for a new command.
+- [x] Have a working history.
+- [ ] Search and launch the right executable (based on the PATH variable or using a relative or an absolute path).
+- [ ] Handle ’ (single quote) which should prevent the shell from interpreting the meta-characters in the quoted sequence.
+- [ ] Handle " (double quote) which should prevent the shell from interpreting the meta-characters in the quoted sequence except for $ (dollar sign).
+- [ ] TODO: parsear stringone
 
-  <li>Struct </li>
-  <li>membros </li>
-  <li> - comando </li>
-  <li> - string </li>
-  <li> - separar os NODES por | </li>
-  <li> ex: echo "jdhd" | grep j | > mnini.txt </li>
+### Implement redirections:
+- [ ] < should redirect input.
+- [ ] > should redirect output.
+- [ ] << should be given a delimiter, then read the input until a line containing the delimiter is seen. However, it doesn’t have to update the history!
+- [ ] >> should redirect output in append mode.
+- [ ] Implement pipes (| character). The output of each command in the pipeline is connected to the input of the next command via a pipe.
+- [ ] Handle environment variables ($ followed by a sequence of characters) which should expand to their values.
+- [ ] Handle $? which should expand to the exit status of the most recently executed foreground pipeline.
+- [ ] Handle ctrl-C, ctrl-D and ctrl-\ which should behave like in bash.
 
-  <li> HEREDOC </li>
-    Somente primeira info pro ultimo da stringone (args da linha de comando)
-    se tiver mais que 2, os intermediários, so apenas criados vazios. Importante manter os dados deles para limpar dps.
-    ex: textqualquer > mini > oi > gab
-    fica: <br>
-gab contem texto qualquer
-e mini e oi sao criados vazios e fechados.
-<br>
+### In interactive mode:
+- [ ] ctrl-C displays a new prompt on a new line.
+- [ ] ctrl-D exits the shell.
+- [ ] ctrl-\ does nothing.
 
-  <li> PROCESSOS </li>
-  <li>  </li>
+### Your shell must implement the following builtins:
+- [ ] echo with option -n
+- [ ] cd with only a relative or absolute path
+- [ ] pwd with no options
+- [ ] export with no options
+- [ ] unset with no options
+- [ ] env with no options or arguments
+- [ ] exit with no options
 
-  <li> EXECVE </li>
-
-  
-
-
-</ol>
-
-~~TODO: incluir libft da Gabi.~~ <br>
-~~TODO: proteger main~~ <br>
-~~TODO: libft -> fclean and clean~~ <br>
+- [ ] memory leaks.
+- [x] memory leaks readline. ATTENTION DELETE THE .SUPP FILE BEFORE FINAL SUBMISSION
