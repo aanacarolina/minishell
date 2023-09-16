@@ -7,7 +7,8 @@
   <li>TODO: parsear stringone</li>
   <li>TODO: rule: norminette</li>
   <li>TODO: remover readline.supp antes de entregar</li>
- 
+  <li> TODO: valgrind add_history
+
   <li>Struct </li>
   <li>membros </li>
   <li> - comando </li>
