@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacalaza <gacalaza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 20:17:41 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/02/23 17:21:38 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/09/15 21:33:38 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
