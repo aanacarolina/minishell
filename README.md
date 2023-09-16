@@ -6,6 +6,7 @@
   <li>TODO: problema com readline</li>
   <li>TODO: parsear stringone</li>
   <li>TODO: rule: norminette</li>
+  <li>TODO: remover readline.supp antes de entregar</li>
  
   <li>Struct </li>
   <li>membros </li>
