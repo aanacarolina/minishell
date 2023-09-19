@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prompt.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 21:38:38 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/15 22:17:50 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:52:48 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 // apos utilizar a func a var 'input' contém o comando digitado pelo usuário
 // rl_clear_history() is not working in the ctrl+c case, we have a mem. leak
 // TODO: treat sign ctrl+d to fix add_history leak above
+// TODO: add_history nao salva se primeiro tiver espaco, porem salva se cmd for extenso
+
 void	init_prompt(void)
 {
 	char	*input;
@@ -30,7 +32,8 @@ void	init_prompt(void)
 		}
 		if (input[0] != '\0')
 		{
-			add_history(input);
+			if (input[0] != 32)
+				add_history(input);
 			printf("That's what she said: %s\n", input);
 		}
 		free(input);

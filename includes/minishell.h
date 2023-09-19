@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:27 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/15 22:51:44 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:09:18 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@
 # include <sys/wait.h>
 # include <unistd.h>
 
-void	init_prompt(void);
+typedef struct s_data
+{
+	char			*commands;
+	char			*redirects;
+	char			**args;
+	char			*env_var;
+	struct s_data	*next;
+}					t_data;
+
+void				init_prompt(void);
 
 #endif
