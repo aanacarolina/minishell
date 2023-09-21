@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prompt.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 21:38:38 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/18 21:52:48 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/20 22:48:04 by gacalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 // apos utilizar a func a var 'input' contém o comando digitado pelo usuário
 // rl_clear_history() is not working in the ctrl+c case, we have a mem. leak
 // TODO: treat sign ctrl+d to fix add_history leak above
-// TODO: add_history nao salva se primeiro tiver espaco, porem salva se cmd for extenso
+// TODO: add_history nao salva se primeiro tiver espaco, 
+// porem salva se cmd for extenso
 
 void	init_prompt(void)
 {
