@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 10:49:17 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/23 16:26:30 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/23 17:20:54 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-t_data	*create_node(char **cmd, char **cmd_args)
+//create node vai receber a struct inteira
+t_data	*create_node(t_data )
 {
 	t_data	*new_node;
 
 	new_node = (t_data *)malloc(sizeof(t_data));
+	//if error
 	new_node->cmd = cmd;
 	new_node->cmd_args = cmd_args;
 	new_node->next = NULL;
 	return (new_node);
 }
 
-t_data	*args_to_list(int argc, char **argv)
+//TODO separar funcao do arrays de cmd
+char	*cmd_arr(int argc, char **argv)
+
+
+//TODO separar funcao do arrays de cmd_args
+char	*cmd_args_arr(int argc, char **argv)
+
+
+t_data	*create_tdata_list(int argc, char **argv)
 {
 	t_data	*head;
 	t_data	*current;
@@ -40,7 +50,9 @@ t_data	*args_to_list(int argc, char **argv)
 	cmd_args = NULL;
 	i = 2;
 	j = 0;
-
+	
+	
+	current = head;
 	cmd[0] = argv[1]; //nome do builtin
 	if (ft_strncmp(argv[2], "-n", 3) == 0)  //se tiver flag
 	{
@@ -53,8 +65,6 @@ t_data	*args_to_list(int argc, char **argv)
 		cmd_args[j] = argv[i];
 		i++;
 	}
-	head = create_node(cmd, cmd_args);
-	current = head;
 	while (i < argc)
 	{
 		current->cmd_args[j] = argv[i];
@@ -62,6 +72,7 @@ t_data	*args_to_list(int argc, char **argv)
 		j++;
 	}
 	current->cmd_args[j] = NULL;
+	head = create_node(cmd, cmd_args);
 	return (head);
 }
 
