@@ -6,91 +6,75 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 10:49:17 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/23 14:30:24 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/23 16:26:30 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-char	*cmd_args_array(int argc, char **argv)
+t_data	*create_node(char **cmd, char **cmd_args)
 {
+	t_data	*new_node;
+
+	new_node = (t_data *)malloc(sizeof(t_data));
+	new_node->cmd = cmd;
+	new_node->cmd_args = cmd_args;
+	new_node->next = NULL;
+	return (new_node);
+}
+
+t_data	*args_to_list(int argc, char **argv)
+{
+	t_data	*head;
+	t_data	*current;
+	char	**cmd;
+	char	**cmd_args;
 	int		i;
 	int		j;
-	char	*arr_args;
 
-	arr_args = calloc(argc - 1, sizeof(t_data));
-	i = 1;
+	head = NULL;
+	current = NULL;
+	cmd = NULL;
+	cmd_args = NULL;
+	i = 2;
 	j = 0;
-	while (i < argc)
+
+	cmd[0] = argv[1]; //nome do builtin
+	if (ft_strncmp(argv[2], "-n", 3) == 0)  //se tiver flag
 	{
-		arr_args[j] = *argv[i];
+		cmd[1] = argv[i]; //i ta valendo 2 ("./prog", "builtin-name", "option" <-(so serve pra echo), "str1", "str2", "str3", NULL) 
+		// isso so pra teste, dps nao vai ter nome do programa e ai diminuir os indices
 		i++;
-		j++;
-	}
-	return (arr_args);
-}
-
-t_data	*create_node(char **cmd_args, t_data *next)
-{
-	t_data	*node;
-	cmd_args = 
-	// node = (t_data){ NULL };
-	node = calloc(1, sizeof(t_data));
-	// node->cmd = "-n";
-	node->cmd_args = cmd_args;
-	node->next = next;
-	return (node);
-}
-// inserts a node(new_last_node) at the end of a list(head)
-void	insert_tail(t_data *start, t_data *new_last_node)
-{
-	t_data	*temp;
-
-	if (start->next == NULL)
-	{
-		start->next = new_last_node;
 	}
 	else
 	{
-		temp = start->next;
-		while (temp->next != NULL)
-		{
-			temp = temp->next;
-		}
-		temp->next = new_last_node;
-	}
-}
-
-// creates a llist from arguments
-t_data	*args_to_list(int argc, char **argv)
-{
-	int		i;
-	t_data	*head;
-	t_data	*new_node;
-
-	head = create_node(argv, NULL);
-	i = 2;
-	while (i != argc)
-	{
-		new_node = create_node(argv, NULL);
-		insert_tail(head, new_node);
+		cmd_args[j] = argv[i];
 		i++;
 	}
+	head = create_node(cmd, cmd_args);
+	current = head;
+	while (i < argc)
+	{
+		current->cmd_args[j] = argv[i];
+		i++;
+		j++;
+	}
+	current->cmd_args[j] = NULL;
 	return (head);
 }
 
-// // This function frees the stack.
-// void	free_stack(t_data **stack)
-// {
-// 	t_data	*tmp;
+/*
+void	print_list(t_data *head)
+{
+	t_data	*current;
 
-// 	if (!stack)
-// 		return ;
-// 	while (*stack)
-// 	{
-// 		tmp = (*stack)->next;
-// 		(*stack)->data = 0;
-// 		free(*stack);
-// 		*stack = tmp;
-// 	}
-// }
+	current = head;
+	while (current != NULL)
+	{
+		printf("cmd: %s\n", *current->cmd);
+		printf("cmd_args: %s\n", *current->cmd_args);
+		current = current->next;
+	}
+}*/
