@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:31 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/23 16:32:23 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/23 19:43:08 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char *argv[])
 	if (argc < 1)
 		return (1);
 	// init_prompt();
-	argzins = args_to_list(argc, argv);
+	argzins = create_data_list(argc, argv);
 	ft_echo(argzins);
 	return (0);
 }
