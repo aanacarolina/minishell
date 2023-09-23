@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:59:04 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/22 21:48:59 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/22 22:51:25 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,21 @@
 // TODO: print args
 // TODO if arg[1] == '-n ' ignore spaces
 // (char *args) -> t_data *prt (struct de cmd a parte da flag / cmd_args)
-// TODO: tratar expansao 
+// TODO: tratar expansao
 // TODO: devolver prompt
 
-void	ft_echo(char **args)  
+void	ft_echo(char **args)
 {
 	int	i;
 
 	i = 0;
+	while (args[i] != NULL)
 	{
-		while (args)
-		{
-			printf("%s ", args[i]);
-			i++;
-		}
-        printf("\n");
+		printf("%s ", args[i]);
+		i++;
 	}
+	if (ft_strncmp(ptr->cmd[1], "-n", 3) != 0)
+		printf("\n");
 }
 
 // int	main(void)

@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:27 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/22 21:02:42 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/22 22:49:12 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 
 typedef struct s_data
 {
-	char			**command;
-	char			**cmd_args;
+	char			**cmd;
+	char			**cmd_args; //{ "oi" "tudo      bem" }
 	char			**heredoc;
 	struct s_rdct	**rdct;
 	char			**env;
