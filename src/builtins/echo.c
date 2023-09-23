@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   echo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:59:04 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/22 22:51:25 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/23 00:07:47 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,22 @@
 // TODO: print args
 // TODO if arg[1] == '-n ' ignore spaces
 // (char *args) -> t_data *prt (struct de cmd a parte da flag / cmd_args)
-// TODO: tratar expansao
+// TODO: tratar expansao (no expansion)
 // TODO: devolver prompt
 
-void	ft_echo(char **args)
+void	ft_echo(t_data **data)
 {
 	int	i;
+	t_data **temp;
 
 	i = 0;
-	while (args[i] != NULL)
+	temp = data;
+	while ((*temp)->cmd_args[i] != NULL)
 	{
-		printf("%s ", args[i]);
+		printf("%s ", (*temp)->cmd_args[i]);
 		i++;
 	}
-	if (ft_strncmp(ptr->cmd[1], "-n", 3) != 0)
+	if (ft_strncmp((*data)->cmd[1], "-n", 3) != 0)
 		printf("\n");
 }
 
-// int	main(void)
-// {
-// 	char **argzin;
-
-//     argzin[0] = "echo";
-//     argzin[1] = "oi";
-//     ft_echo(argzin);
-// 	return (0);
-// }

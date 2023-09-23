@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:27 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/22 22:49:12 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/23 00:06:51 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 typedef struct s_data
 {
 	char			**cmd;
-	char			**cmd_args; //{ "oi" "tudo      bem" }
+	char			**cmd_args;
 	char			**heredoc;
 	struct s_rdct	**rdct;
 	char			**env;
@@ -46,6 +46,6 @@ typedef struct s_rdct
 
 void	init_prompt(void);
 int		is_builtins(char *check);
-void	ft_echo(char **args);
+void	ft_echo(t_data **data);
 
 #endif
