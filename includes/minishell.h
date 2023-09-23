@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:27 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/23 00:06:51 by carolina.si      ###   ########.fr       */
+/*   Updated: 2023/09/23 14:27:30 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,11 @@ typedef struct s_rdct
 	struct s_rdct	*next;
 }					t_rdct;
 
-void	init_prompt(void);
-int		is_builtins(char *check);
-void	ft_echo(t_data **data);
+void				init_prompt(void);
+int					is_builtins(char *check);
+t_data				*args_to_list(int argc, char **argv);
+char				*cmd_args_array(int argc, char **argv);
+void				DEBUG_printlist(t_data *args);
+void				ft_echo(t_data *data);
 
 #endif

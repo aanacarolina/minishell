@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   echo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:59:04 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/23 00:07:47 by carolina.si      ###   ########.fr       */
+/*   Updated: 2023/09/23 13:36:33 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,18 @@
 // TODO: tratar expansao (no expansion)
 // TODO: devolver prompt
 
-void	ft_echo(t_data **data)
+void	ft_echo(t_data *data)
 {
-	int	i;
-	t_data **temp;
+	int		i;
+	t_data	*temp;
 
 	i = 0;
 	temp = data;
-	while ((*temp)->cmd_args[i] != NULL)
+	while (temp->cmd_args[i] != NULL)
 	{
-		printf("%s ", (*temp)->cmd_args[i]);
+		printf("%s ", temp->cmd_args[i]);
 		i++;
 	}
-	if (ft_strncmp((*data)->cmd[1], "-n", 3) != 0)
+	if (ft_strncmp(data->cmd_args[0], "-n", 3) != 0)
 		printf("\n");
 }
-
