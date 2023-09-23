@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 10:49:17 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/23 19:52:28 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/23 20:19:47 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//TODO separar funcao do arrays de cmd
+// TODO separar funcao do arrays de cmd
 char	*cmd_arr(char **argv)
 {
+	char	*cmd;
 
-	char *cmd;
-
-	cmd = ft_calloc(3, sizeof(char));  //calculo ta certo?
+	cmd = ft_calloc(3, sizeof(char *)); // TODO: calculo ta certo?
 	if (!cmd)
 		return (NULL);
 	cmd[0] = *argv[1];
-	if(ft_strncmp(argv[2], "-n", 3) == 0)
+	if (ft_strncmp(argv[2], "-n", 3) == 0)
 		cmd[1] = *argv[2];
-	//cmd[2] = "NULL";
-
+	//cmd[2] = NULL;
 	return (cmd);
 }
-	
-//TODO separar funcao do arrays de cmd_args
+
+// TODO separar funcao do arrays de cmd_args
 char	*cmd_args_arr(int argc, char **argv)
 {
-	int i;
-	int j;
-	char *cmd_args;
+	int		i;
+	int		j;
+	char	*cmd_args;
 
-	cmd_args = calloc(argc - 1, sizeof(char));// qty tem que saber se teve flag
+	cmd_args = calloc(argc - 1, sizeof(char *)); // qty tem que saber se teve flag
 	if (!cmd_args)
 		return (NULL);
 	i = 1;
@@ -49,13 +47,12 @@ char	*cmd_args_arr(int argc, char **argv)
 		i++;
 		j++;
 	}
-	j++;
-	//cmd_args[j] = NULL;
-
+	//j++;
+	// cmd_args[j] = NULL;
 	return (cmd_args);
 }
 
-//create node vai receber a struct inteira, nada?
+// create node vai receber a struct parseada, na realidade
 t_data	*create_node(int argc, char **argv)
 {
 	t_data	*new_node;
@@ -72,9 +69,9 @@ t_data	*create_node(int argc, char **argv)
 t_data	*create_data_list(int argc, char **argv)
 {
 	t_data	*head;
-	int i;
+	int		i;
 
-	i = 2;
+	i = 1;
 	head = create_node(argc, &argv[i]);
 	return (head);
 }

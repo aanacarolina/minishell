@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:27 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/23 19:42:02 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/23 19:57:47 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ typedef struct s_rdct
 void				init_prompt(void);
 int					is_builtins(char *check);
 t_data				*create_data_list(int argc, char **argv);
-void				DEBUG_printlist(t_data *args);
 void				ft_echo(t_data *data);
 
 #endif
