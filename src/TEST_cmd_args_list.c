@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 10:49:17 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/23 20:19:47 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/24 15:00:14 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*cmd_arr(char **argv)
 {
 	char	*cmd;
 
-	cmd = ft_calloc(3, sizeof(char *)); // TODO: calculo ta certo?
+	cmd = ft_calloc(3, sizeof(char *));
 	if (!cmd)
 		return (NULL);
 	cmd[0] = *argv[1];
@@ -66,6 +66,7 @@ t_data	*create_node(int argc, char **argv)
 	return (new_node);
 }
 
+//por enquanto so cria o primeiro node - casos sem pipe e um cmd só
 t_data	*create_data_list(int argc, char **argv)
 {
 	t_data	*head;
@@ -75,17 +76,3 @@ t_data	*create_data_list(int argc, char **argv)
 	head = create_node(argc, &argv[i]);
 	return (head);
 }
-
-/*
-void	print_list(t_data *head)
-{
-	t_data	*current;
-
-	current = head;
-	while (current != NULL)
-	{
-		printf("cmd: %s\n", *current->cmd);
-		printf("cmd_args: %s\n", *current->cmd_args);
-		current = current->next;
-	}
-}*/
