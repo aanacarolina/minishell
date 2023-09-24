@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:27 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/23 19:57:47 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/24 13:52:59 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # include <sys/types.h>
 # include <sys/wait.h>
 # include <unistd.h>
+
+//TODO: suggestion - Use enum for STATES -> ex.: enum states { START, IN_WORD, IN_STRING } state = START;
 
 typedef struct s_data
 {
