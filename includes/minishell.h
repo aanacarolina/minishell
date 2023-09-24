@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:27 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/20 22:47:25 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/09/24 14:28:48 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,16 @@ typedef struct s_data
 	struct s_rdct	**rdct;
 	char			**env;
 	struct s_data	*next;
-}			t_data;
+}					t_data;
 
 typedef struct s_rdct
 {
 	char			*redirect;
 	char			*file;
 	struct s_rdct	*next;
-}				t_rdct;
+}					t_rdct;
 
-void	init_prompt(void);
+void				init_prompt(void);
+void				welcome(void);
 
 #endif
