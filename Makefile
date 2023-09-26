@@ -6,7 +6,7 @@
 #    By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 20:24:48 by gacalaza          #+#    #+#              #
-#    Updated: 2023/09/23 11:42:29 by anacaro3         ###   ########.fr        #
+#    Updated: 2023/09/25 21:20:49 by anacaro3         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME =	minishell
 
 # ======= Sources and objs ========
-SRCS = minishell.c prompt.c builtins_utils.c ./builtins/echo.c TEST_cmd_args_list.c
+SRCS = minishell.c prompt.c ./builtins/echo.c ./builtins/builtins_list.c ./builtins/builtins_utils.c
 
 OBJS = $(SRCS_MAN:.c=.o)
 
