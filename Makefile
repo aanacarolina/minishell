@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
+#    By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 20:24:48 by gacalaza          #+#    #+#              #
-#    Updated: 2023/09/15 21:43:48 by gacalaza         ###   ########.fr        #
+#    Updated: 2023/09/24 14:19:51 by anacaro3         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME =	minishell
 
 # ======= Sources and objs ========
-SRCS = minishell.c prompt.c
+SRCS = minishell.c prompt.c pretty_shell.c
 
 OBJS = $(SRCS_MAN:.c=.o)
 
