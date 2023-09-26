@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 10:49:17 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/25 22:22:57 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/25 22:35:20 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,8 @@ char	**cmd_arr(char **argv)
 	if (!cmd)
 		return (NULL);
 	cmd[0] = ft_strdup(argv[0]);
-		//printf("cmd_arr[%s]\n", cmd[0]);
 	if (ft_strncmp(argv[1], "-n", 3) == 0)
-	{
-		cmd[1] = ft_strdup(argv[1]);
-		//printf("cmd_arr[%s]\n", cmd[1]);
-	}
+		cmd[1] = ft_strdup(argv[1]); 
 	cmd[2] = NULL;
 	return (cmd);
 }
@@ -46,12 +42,13 @@ char	**cmd_args_arr(int argc, char **argv)
 		return (NULL);
 	i = 1;
 	j = 0;
+	 printf("cmd_arr_args[%s]\n",argv[1]);
 	if (ft_strncmp(argv[1], "-n", 3) == 0)
 		i++;
 	while (i < argc)
 	{
 		cmd_args[j] = ft_strdup(argv[i]);
-		//printf("cmd_arr_args[%s]\n", cmd_args[j]);
+		// printf("cmd_arr_args[%s]\n", cmd_args[j]);
 		i++;
 		j++;
 	}
