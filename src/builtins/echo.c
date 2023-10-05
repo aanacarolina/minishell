@@ -6,7 +6,7 @@
 /*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:59:04 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/10/05 18:31:24 by carolina.si      ###   ########.fr       */
+/*   Updated: 2023/10/05 18:53:18 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 // (char *args) -> t_data *prt (struct de cmd a parte da flag / cmd_args)
 // TODO: tratar expansao (no expansion)
 // TODO: devolver prompt
-// TODO remove last space %s 
+// TODO remove last space %s
 
 void	ft_echo(t_data *data)
 {
@@ -29,13 +29,16 @@ void	ft_echo(t_data *data)
 
 	i = 0;
 	temp = data;
-	while (temp->cmd_args[i] != NULL)
+	printf("%s", temp->cmd_args[i]);
+	i++;
+	while (temp->cmd_args[i+1])
 	{
-		printf("%s ", temp->cmd_args[i]); //TODO pensar em como remover ultimo espaço -> usar write 
+		printf(" %s", temp->cmd_args[i]);
 		i++;
 	}
 	if (data->cmd[1] == NULL)
 		printf("\n");
 }
 
-//TODO - EXIT STATUS = The echo utility exits 0 on success, and >0 if an error occurs.
+// TODO - EXIT STATUS = The echo utility exits 0 on success,
+// and >0 if an error occurs.
