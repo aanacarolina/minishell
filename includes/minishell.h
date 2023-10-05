@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:27 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/25 21:21:57 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/10/05 18:33:35 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

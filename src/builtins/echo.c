@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   echo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:59:04 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/25 22:21:39 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/10/05 18:31:24 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,13 @@ void	ft_echo(t_data *data)
 
 	i = 0;
 	temp = data;
-	//if (data->cmd[1] != NULL && ft_strncmp(data->cmd[1], "-n", 3) != 0)
 	while (temp->cmd_args[i] != NULL)
 	{
-		printf("%s ", temp->cmd_args[i]);
+		printf("%s ", temp->cmd_args[i]); //TODO pensar em como remover ultimo espaço -> usar write 
 		i++;
 	}
 	if (data->cmd[1] == NULL)
 		printf("\n");
 }
+
+//TODO - EXIT STATUS = The echo utility exits 0 on success, and >0 if an error occurs.

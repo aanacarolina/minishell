@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 10:49:17 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/25 22:35:20 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/10/05 18:36:44 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,14 @@ char	**cmd_arr(char **argv)
 	cmd = ft_calloc(3, sizeof(char *));
 	if (!cmd)
 		return (NULL);
-	cmd[0] = ft_strdup(argv[0]);
+	cmd[0] = ft_strdup(argv[1]);
 	if (ft_strncmp(argv[1], "-n", 3) == 0)
-		cmd[1] = ft_strdup(argv[1]); 
-	cmd[2] = NULL;
+	{
+		cmd[1] = ft_strdup(argv[1]);
+		cmd[2] = NULL;
+	}
+	else
+		cmd[1] = NULL;
 	return (cmd);
 }
 
@@ -42,17 +46,15 @@ char	**cmd_args_arr(int argc, char **argv)
 		return (NULL);
 	i = 1;
 	j = 0;
-	 printf("cmd_arr_args[%s]\n",argv[1]);
 	if (ft_strncmp(argv[1], "-n", 3) == 0)
 		i++;
 	while (i < argc)
 	{
 		cmd_args[j] = ft_strdup(argv[i]);
-		// printf("cmd_arr_args[%s]\n", cmd_args[j]);
 		i++;
 		j++;
 	}
-	cmd_args[j] = NULL;
+	cmd_args[++j] = NULL;
 	return (cmd_args);
 }
 
@@ -71,7 +73,7 @@ t_data	*create_node(int argc, char **argv)
 }
 
 // por enquanto so cria o primeiro node, pois
-//-> casos sem pipe e um cmd só
+// casos sem pipe é um cmd só
 t_data	*create_data_list(int argc, char **argv)
 {
 	t_data	*head;

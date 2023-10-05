@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prompt.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 21:38:38 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/20 22:48:04 by gacalaza         ###   ########.fr       */
+/*   Updated: 2023/09/26 11:33:29 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ void	init_prompt(void)
 		free(input);
 		input = NULL;
 	}
-	rl_clear_history();
+	//rl_clear_history();
 }
