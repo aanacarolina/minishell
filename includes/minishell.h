@@ -51,5 +51,6 @@ void				init_prompt(void);
 int					is_builtins(char *check);
 t_data				*create_data_list(int argc, char **argv);
 void				ft_echo(t_data *data);
+void				welcome(void);
 
 #endif

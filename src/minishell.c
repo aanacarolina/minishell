@@ -20,6 +20,7 @@ int	main(int argc, char *argv[])
 	//(void)envp;
 	if (argc < 1)
 		return (1);
+  	welcome();
 	// init_prompt();
 	argzins = create_data_list(argc, argv);
 	// print_list(argzins);
