@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:27 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/24 14:28:48 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/10/05 18:33:35 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@
 # include <sys/wait.h>
 # include <unistd.h>
 
+//TODO: suggestion - Use enum for STATES 
+//-> ex.: enum states { START, IN_WORD, IN_STRING } state = START;
+
 typedef struct s_data
 {
-	char			**command;
+	char			**cmd;
 	char			**cmd_args;
 	char			**heredoc;
 	struct s_rdct	**rdct;
@@ -45,6 +48,9 @@ typedef struct s_rdct
 }					t_rdct;
 
 void				init_prompt(void);
+int					is_builtins(char *check);
+t_data				*create_data_list(int argc, char **argv);
+void				ft_echo(t_data *data);
 void				welcome(void);
 
 #endif

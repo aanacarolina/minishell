@@ -6,20 +6,24 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:36:31 by gacalaza          #+#    #+#             */
-/*   Updated: 2023/09/24 14:19:11 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/25 21:26:47 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-// TODO: verificar se precisa msg de erro ou so encerrar?
-int	main(int argc, char *argv[], char *envp[])
+int	main(int argc, char *argv[])
 {
-	(void)argv;
-	(void)envp;
-	if (argc != 1)
+	t_data	*argzins;
+
+	//(void)argv;
+	//(void)envp;
+	if (argc < 1)
 		return (1);
-	welcome();
-	init_prompt();
+  	welcome();
+	// init_prompt();
+	argzins = create_data_list(argc, argv);
+	// print_list(argzins);
+	ft_echo(argzins);
 	return (0);
 }

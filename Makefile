@@ -14,7 +14,7 @@
 NAME =	minishell
 
 # ======= Sources and objs ========
-SRCS = minishell.c prompt.c pretty_shell.c
+SRCS = minishell.c prompt.c ./builtins/echo.c ./builtins/builtins_list.c ./builtins/builtins_utils.c
 
 OBJS = $(SRCS_MAN:.c=.o)
 
